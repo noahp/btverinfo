@@ -1,4 +1,4 @@
-# Bluetooth SIG Assigned Numbers Decoder
+# Bluetooth Version Info Decoder
 
 Simple python library + command-line utility for decoding `LL_VERSION_IND`
 response data.
