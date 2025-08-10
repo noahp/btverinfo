@@ -1,0 +1,24 @@
+[project]
+name = "btverinfo"
+version = "0.1.0"
+description = "Decodes data from BT LL_VERSION_IND fields"
+readme = "README.md"
+authors = [
+    { name = "Noah Pendleton" }
+]
+requires-python = ">=3"
+dependencies = []
+
+[build-system]
+requires = ["uv_build>=0.8.8,<0.9.0"]
+build-backend = "uv_build"
+
+[project.scripts]
+btverinfo = "btverinfo:main"
+
+[dependency-groups]
+dev = [
+    "pyyaml>=5.4.1",
+    "requests>=2.25.1",
+    "ruff>=0.0.17",
+]
