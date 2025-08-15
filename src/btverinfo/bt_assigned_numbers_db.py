@@ -1,5 +1,15 @@
 # Auto-generated from Bluetooth SIG assigned numbers
+company_index_date = "Fri, 15 Aug 2025 00:14:43 GMT"
 company_identifiers = [
+    {"value": 3922, "name": "Shenzhen Yunke Intelligent Co.Ltd"},
+    {"value": 3921, "name": "ebm-papst Mulfingen GmbH & Co. KGaA & Co. KG"},
+    {"value": 3920, "name": "Lantern Innovations Incorporated"},
+    {"value": 3919, "name": "G-Vision GmbH"},
+    {"value": 3918, "name": "Ningbo Dooya Mechanic & Electronic Technology Co., Ltd"},
+    {"value": 3917, "name": "Qulinda AB"},
+    {"value": 3916, "name": "JL WORLD CORPORATION LIMITED"},
+    {"value": 3915, "name": "desamisCo.,Ltd."},
+    {"value": 3914, "name": "Mitsubishi Motors Corporation"},
     {"value": 3913, "name": "IYO INC."},
     {"value": 3912, "name": "Shenzhen Xinfeiyi Technology Co., Ltd."},
     {"value": 3911, "name": "Lodestar Technology Inc."},
@@ -3973,6 +3983,7 @@ company_identifiers = [
     {"value": 0, "name": "Ericsson AB"},
 ]
 
+core_index_date = "Fri, 15 Aug 2025 00:14:43 GMT"
 core_versions = [
     {"value": 0, "name": "Bluetooth® Core Specification 1.0b (Withdrawn)"},
     {"value": 1, "name": "Bluetooth® Core Specification 1.1 (Withdrawn)"},

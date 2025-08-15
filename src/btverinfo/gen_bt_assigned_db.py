@@ -31,20 +31,30 @@ def fetch_yaml(url):
     # Lastly, replace 'Bluetooth�' with 'Bluetooth®'
     text = text.replace("Bluetooth�", "Bluetooth®")
 
-    return yaml.safe_load(text)
+    # Get last-modified date from the response headers
+    last_modified = resp.headers.get("Last-Modified")
+    assert last_modified, "No Last-Modified header found in the response"
+
+    return last_modified, yaml.safe_load(text)
 
 
 def main():
     print("Downloading YAML files...")
-    company_data = fetch_yaml(COMPANY_IDS_URL)
-    core_version_data = fetch_yaml(CORE_VERSION_URL)
+    company_data_last_modified, company_data = fetch_yaml(COMPANY_IDS_URL)
+    core_version_data_last_modified, core_version_data = fetch_yaml(CORE_VERSION_URL)
 
     print(f"Writing database to {OUTPUT_FILE} ...")
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("# Auto-generated from Bluetooth SIG assigned numbers\n")
+        f.write("company_index_date = ")
+        f.write(repr(company_data_last_modified))
+        f.write("\n")
         f.write("company_identifiers = ")
         f.write(repr(company_data.get("company_identifiers", [])))
         f.write("\n\n")
+        f.write("core_index_date = ")
+        f.write(repr(core_version_data_last_modified))
+        f.write("\n")
         f.write("core_versions = ")
         f.write(repr(core_version_data.get("core_version", [])))
         f.write("\n")
